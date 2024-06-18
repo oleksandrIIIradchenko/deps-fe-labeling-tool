@@ -1,4 +1,4 @@
-import 'antd/lib/collapse/style/index.less'
+// import 'antd/es/collapse/style/index.css'
 import { Collapse } from 'antd'
 
 export {

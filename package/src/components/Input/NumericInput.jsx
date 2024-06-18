@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { InputNumber } from 'antd'
-import 'antd/lib/input-number/style/index.less'
+// import 'antd/es/input-number/style/index.css'
 import PropTypes from 'prop-types'
 
 const ALLOWED_TO_KEY_DOWN_REGEXP = /^\d+$|Backspace|Delete|ArrowRight|ArrowLeft/

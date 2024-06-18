@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tabs as AntdTabs } from 'antd'
-import 'antd/lib/tabs/style/index.less'
+// import 'antd/es/tabs/style/index.css'
 import PropTypes from 'prop-types'
 
 const { TabPane } = AntdTabs

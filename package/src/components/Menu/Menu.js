@@ -1,6 +1,6 @@
 
 import { Menu } from 'antd'
-import 'antd/lib/menu/style/index.less'
+// import 'antd/es/menu/style/index.css'
 
 const MenuTrigger = {
   CLICK: 'click',

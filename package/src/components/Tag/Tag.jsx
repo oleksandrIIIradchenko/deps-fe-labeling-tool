@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tag } from 'antd'
-import 'antd/lib/tag/style/index.less'
+// import 'antd/es/tag/style/index.css'
 
 const AntdTag = (props) => (<Tag {...props} />)
 

@@ -1,5 +1,5 @@
 import { Typography } from 'antd'
-import 'antd/lib/typography/style/index.less'
+// import 'antd/es/typography/style/index.css'
 
 export {
   Typography

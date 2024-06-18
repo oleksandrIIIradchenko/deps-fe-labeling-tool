@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react'
 import { ExclamationCircleOutlined } from '@ant-design/icons'
 import { Modal } from 'antd'
-import 'antd/lib/modal/style/index.less'
+// import 'antd/es/modal/style/index.css'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { removeLabels, removeTables } from '@/actions/markup'

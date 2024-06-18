@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout } from 'antd'
-import 'antd/lib/layout/style/index.less'
+// import 'antd/es/layout/style/index.css'
 
 const ANTD_LIGHT_THEME = 'light'
 

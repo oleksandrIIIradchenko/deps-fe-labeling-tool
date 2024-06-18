@@ -1,6 +1,5 @@
 import { pages } from '../assets/document'
-import { KnownLanguage } from 'labeling-tool/lib/enums/KnownLanguage'
-import { Document } from 'labeling-tool/lib/models/Document'
+import { KnownLanguage, Document } from 'labeling-tool'
 
 const documentForLabeling = new Document(
   pages,

@@ -1,5 +1,5 @@
 import { Layout as AntdLayout } from 'antd'
-import 'antd/lib/layout/style/index.less'
+// import 'antd/es/layout/style/index.css'
 import styled from 'styled-components'
 
 const Layout = styled(AntdLayout)`

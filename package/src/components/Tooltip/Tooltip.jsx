@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tooltip as AntdTooltip } from 'antd'
-import 'antd/lib/tooltip/style/index.less'
+// import 'antd/es/tooltip/style/index.css'
 import PropTypes from 'prop-types'
 import { childrenShape } from '@/utils/propTypes'
 

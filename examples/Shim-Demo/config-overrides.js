@@ -3,7 +3,7 @@ const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const { overrideProcessEnv } = require('./misc/overrideProcessEnv');
 const esmRequire = require('esm')(module);
 const themeVariables = esmRequire('./misc/antd-theme');
-const { CompilationFeature } = esmRequire('labeling-tool/lib/enums/CompilationFeature');
+const { CompilationFeature } = esmRequire('labeling-tool');
 
 const ENABLED_FEATURES_NAMES = [CompilationFeature.SHOW_NOT_IMPLEMENTED];
 

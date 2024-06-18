@@ -6,6 +6,7 @@ import './index.css';
 import { LabelingTool } from 'labeling-tool';
 import { SHIM_CONFIG } from './config/shim';
 
+console.log(LabelingTool)
 const App = () => {
   return (
     <StrictMode>

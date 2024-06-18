@@ -3,8 +3,10 @@
   "version": "2.0.4",
   "private": false,
   "description": "Project agnostic tool for documents labeling",
-  "main": "lib/application/LabelingTool/LabelingTool.js",
-  "module": "lib/application/LabelingTool/LabelingTool.js",
+  "source": "./src/index.ts",
+  "main": "./lib/main.js",
+  "module": "./lib/main.js",
+  "style": "./lib/main.css",
   "scripts": {
     "build:dev": "webpack --config webpack.dev.js",
     "build:prod": "webpack --config webpack.prod.js",
@@ -58,6 +60,7 @@
     "babel-loader": "^8.2.3",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-styled-components": "^2.0.6",
+    "circular-dependency-plugin": "^5.2.2",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^5.2.4",
     "css-minimizer-webpack-plugin": "^3.4.1",
@@ -100,10 +103,11 @@
     "style-loader": "^3.3.1",
     "stylelint": "^14.6.0",
     "stylelint-config-standard-scss": "^3.0.0",
-    "stylelint-processor-styled-components": "^1.10.0",
+    "stylelint-processor-styled-components": "^1.0.0",
     "webpack": "^5.76.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4",
+    "webpack-node-externals": "^3.0.0",
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
@@ -112,9 +116,9 @@
     "@handsontable/react": "^4.0.0",
     "antd": "^4.16.1",
     "dayjs": "1.10.7",
-    "fabric": "4.6.0",
+    "fabric": "^5.3.0",
     "file-saver": "^2.0.2",
-    "handsontable": "6.2.2",
+    "handsontable": "^14.4.0",
     "jsonschema": "^1.4.0",
     "lodash": "^4.17.21",
     "prop-types": "^15.7.2",
@@ -134,7 +138,8 @@
     "reselect": "^4.1.5",
     "styled-components": "^5.3.11",
     "url": "^0.11.3",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "window-or-global": "^1.0.1"
   },
   "peerDependencies": {
     "antd": "^4.16.1",

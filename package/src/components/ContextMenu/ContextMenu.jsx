@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react'
 import { Menu, Dropdown } from 'antd'
-import 'antd/lib/menu/style/index.less'
-import 'antd/lib/dropdown/style/index.less'
+// import 'antd/es/menu/style/index.css'
+// import 'antd/es/dropdown/style/index.css'
 import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
 import { optionShape } from '@/models/Option'
 import { DropdownPosition } from './ContextMenu.styles'
+import { globalsVar } from '@/utils/global-variable'
 
 const DEFAULT_ANIMATION_TIME = 300
 
@@ -79,9 +80,9 @@ class ContextMenu extends PureComponent {
 }
 
 const openMenu = (x, y, options, context, onSelection) => {
-  const root = document.getRootNode()
+  const root = globalsVar.document.getRootNode()
 
-  const menu = document.createElement('div')
+  const menu = globalsVar.document.createElement('div')
   menu.setAttribute('style', 'position: absolute; top: 0; left: 0')
 
   root.body.appendChild(menu)

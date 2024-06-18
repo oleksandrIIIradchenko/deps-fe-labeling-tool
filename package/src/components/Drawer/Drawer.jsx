@@ -1,7 +1,7 @@
 
 import React, { PureComponent } from 'react'
 import { Drawer as AntdDrawer } from 'antd'
-import 'antd/lib/drawer/style/index.less'
+// import 'antd/es/drawer/style/index.css'
 import PropTypes from 'prop-types'
 import { Placement } from '@/enums/Placement'
 

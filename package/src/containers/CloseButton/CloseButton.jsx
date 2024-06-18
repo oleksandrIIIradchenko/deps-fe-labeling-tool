@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import 'antd/lib/modal/style/index.less'
+// import 'antd/es/modal/style/index.css'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { save, saveMarkup } from '@/actions/api'

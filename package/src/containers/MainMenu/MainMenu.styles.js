@@ -1,5 +1,5 @@
 import { Menu } from 'antd'
-import 'antd/lib/menu/style/index.less'
+// import 'antd/es/menu/style/index.css'
 import styled from 'styled-components'
 
 const ActionMenu = styled(Menu)`

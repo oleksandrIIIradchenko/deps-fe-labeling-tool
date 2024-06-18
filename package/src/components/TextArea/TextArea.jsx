@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input } from 'antd'
-import 'antd/lib/input/style/index.less'
+// import 'antd/es/input/style/index.css'
 
 const TextArea = (props) => (
   <Input.TextArea {...props} />

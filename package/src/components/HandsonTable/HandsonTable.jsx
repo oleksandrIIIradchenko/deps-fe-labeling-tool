@@ -1,4 +1,3 @@
-
 import React, { createRef, Component, memo } from 'react'
 import PropTypes from 'prop-types'
 import { renderCell } from './Cell'
@@ -6,6 +5,7 @@ import { StyledHotTable } from './HandsonTable.styles'
 import { htColumnShape } from './models/HTColumn'
 import { htMergeShape } from './models/HTMerge'
 import { rowsOfPrimitivesShape } from './models/HTTableData'
+import { globalsVar } from '@/utils/global-variable'
 
 const StretchColumn = {
   ALL: 'all',
@@ -72,7 +72,7 @@ class HandsonTable extends Component {
   setHeight = () => {
     const hotElementRef = this.htRef.current?.hotElementRef
 
-    const partentComputedStyle = window.getComputedStyle(hotElementRef.parentNode)
+    const partentComputedStyle = globalsVar.window.getComputedStyle(hotElementRef.parentNode)
     const parentPaddingTop = this.getWithoutPx(partentComputedStyle.paddingTop)
     const parentPaddingBottom = this.getWithoutPx(partentComputedStyle.paddingBottom)
 

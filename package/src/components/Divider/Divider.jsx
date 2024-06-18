@@ -1,6 +1,6 @@
 import React from 'react'
 import { Divider as AntdDivider } from 'antd'
-import 'antd/lib/divider/style/index.less'
+// import 'antd/es/divider/style/index.css'
 
 const DividerOrientation = {
   LEFT: 'left',

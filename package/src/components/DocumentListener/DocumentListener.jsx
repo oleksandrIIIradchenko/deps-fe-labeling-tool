@@ -1,5 +1,6 @@
 import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import { globalsVar } from '@/utils/global-variable'
 
 class DocumentListener extends PureComponent {
   static propTypes = {
@@ -7,11 +8,11 @@ class DocumentListener extends PureComponent {
   }
 
   componentDidMount = () => {
-    document.addEventListener('contextmenu', this.props.onContextMenu)
+    globalsVar.document.addEventListener('contextmenu', this.props.onContextMenu)
   }
 
   componentWillUnmount = () => {
-    document.removeEventListener('contextmenu', this.props.onContextMenu)
+    globalsVar.document.removeEventListener('contextmenu', this.props.onContextMenu)
   }
 
   render = () => null

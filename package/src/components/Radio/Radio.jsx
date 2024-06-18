@@ -1,7 +1,7 @@
 
 import React, { PureComponent } from 'react'
 import { Radio as AntdRadio } from 'antd'
-import 'antd/lib/radio/style/index.less'
+// import 'antd/es/radio/style/index.css'
 import PropTypes from 'prop-types'
 import { optionShape } from '@/models/Option'
 

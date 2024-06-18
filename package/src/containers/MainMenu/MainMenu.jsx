@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { Dropdown, Menu } from 'antd'
-import 'antd/lib/dropdown/style/index.less'
-import 'antd/lib/modal/style/index.less'
+// import 'antd/es/dropdown/style/index.css'
+// import 'antd/es/modal/style/index.css'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { importMarkup, exportMarkup } from '@/actions/markup'
@@ -17,6 +17,7 @@ import { markupSelector } from '@/selectors/markup'
 import { settingsSelector } from '@/selectors/settings'
 import { selectedToolSelector } from '@/selectors/tools'
 import { ActionMenu } from './MainMenu.styles'
+import { globalsVar } from '@/utils/global-variable'
 
 const RESOURCE_DOCUMENT_NAME = 'Labeling_Tool_Guide.pdf'
 
@@ -81,7 +82,7 @@ const MainMenu = ({
   markup
 }) => {
   const downloadUserGuide = async () => {
-    const link = document.createElement('a')
+    const link = globalsVar.document.createElement('a')
     const pdfBase64 = await fetch(UserGuide)
 
     const blobPdf = await pdfBase64.blob()

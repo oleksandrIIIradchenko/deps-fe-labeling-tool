@@ -6,6 +6,8 @@ import {
   RECOGNIZABLE_DATE_FORMATS
 } from '@/utils/dayjs'
 import { StyledDatePicker } from './DatePicker.styles'
+import { Element } from '@/utils/element'
+import { globalsVar } from '@/utils/global-variable'
 
 const dateJsShape = PropTypes.shape({
   $D: PropTypes.number,
@@ -28,7 +30,7 @@ const DatePicker = ({
   innerRef,
   suffixIcon
 }) => {
-  const getPopupContainer = () => document.body
+  const getPopupContainer = () => globalsVar.document.body
 
   return (
     <StyledDatePicker

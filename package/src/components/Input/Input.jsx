@@ -1,7 +1,8 @@
 import React from 'react'
 import { Input as AntdInput } from 'antd'
 import PropTypes from 'prop-types'
-import 'antd/lib/input/style/index.less'
+// import 'antd/es/input/style/index.css'
+import { Element } from '@/utils/element'
 
 const Input = ({ innerRef, ...rest }) => (
   <AntdInput {...rest} ref={innerRef} />

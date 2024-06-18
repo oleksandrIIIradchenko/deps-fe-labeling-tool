@@ -8,6 +8,10 @@ import { settingsShape } from '@/models/Settings'
 
 class Config {
   constructor (document, fields, ocr, api, markup, settings, events) {
+    this.setConfig(document, fields, ocr, api, markup, settings, events)
+  }
+
+  setConfig (document, fields, ocr, api, markup, settings, events) {
     this.document = document
     this.fields = fields
     this.ocr = ocr

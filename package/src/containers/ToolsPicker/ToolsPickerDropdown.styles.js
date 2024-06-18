@@ -1,5 +1,5 @@
 import { Menu } from 'antd'
-import 'antd/lib/menu/style/index.less'
+// import 'antd/es/menu/style/index.css'
 import styled, { css } from 'styled-components'
 import { COLORS } from '@/theme/theme.default'
 

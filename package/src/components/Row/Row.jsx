@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { Row } from 'antd'
-import 'antd/lib/grid/style/index.less'
+// import 'antd/es/grid/style/index.css'
 
 const AntdRow = (props) => (<Row {...props} />)
 

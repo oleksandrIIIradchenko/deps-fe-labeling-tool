@@ -1,5 +1,5 @@
 import { Select as AntdSelect } from 'antd'
-import 'antd/lib/select/style/index.less'
+// import 'antd/es/select/style/index.css'
 import styled, { css } from 'styled-components'
 
 const Select = styled(AntdSelect)`

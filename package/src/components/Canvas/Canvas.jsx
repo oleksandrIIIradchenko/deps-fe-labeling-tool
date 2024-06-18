@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { CANVAS_HOC_NAME } from '@/components/CanvasProvider'
 import { DocumentListener } from '@/components/DocumentListener'
 import { COLORS } from '@/theme/theme.default'
+import { globalsVar } from '@/utils/global-variable'
 
 class Canvas extends PureComponent {
   static propTypes = {
@@ -16,8 +17,8 @@ class Canvas extends PureComponent {
   }
 
   static defaultProps = {
-    width: window.innerWidth,
-    height: window.innerHeight
+    width: globalsVar.window?.innerWidth,
+    height: globalsVar.window?.innerHeight
   }
 
   canvasRef = React.createRef()

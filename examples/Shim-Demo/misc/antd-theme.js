@@ -1,4 +1,4 @@
-import { COLORS } from 'labeling-tool/lib/theme/theme.default'
+import { COLORS } from 'labeling-tool'
 
 module.exports = {
   'font-family': 'Open Sans, -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, \'Helvetica Neue\', Arial, \'Noto Sans\', sans-serif',

@@ -1,7 +1,8 @@
 import React from 'react'
 import { Checkbox as AntdCheckbox } from 'antd'
 import PropTypes from 'prop-types'
-import 'antd/lib/checkbox/style/index.less'
+// import 'antd/es/checkbox/style/index.css'
+import { Element } from '@/utils/element'
 
 const Checkbox = ({
   onChange,

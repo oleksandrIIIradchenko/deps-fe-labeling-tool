@@ -11,6 +11,7 @@ import {
   ocrEnginesSelector
 } from '@/selectors/ocr'
 import { Select } from './OcrSelect.styles'
+import { globalsVar } from '@/utils/global-variable'
 
 const OcrSelect = ({
   setPrimaryEngine,
@@ -41,7 +42,7 @@ const OcrSelect = ({
       onChange={onSelectItemChange}
       defaultValue={primaryEngine}
       options={generateOptions()}
-      getPopupContainer={() => document.body}
+      getPopupContainer={() => globalsVar.document.body}
     />
   )
 }

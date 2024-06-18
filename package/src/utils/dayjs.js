@@ -2,8 +2,9 @@ import dayjs from 'dayjs'
 import 'dayjs/locale/ru'
 import 'dayjs/locale/en-in'
 import 'dayjs/locale/hi'
+import { globalsVar } from '@/utils/global-variable'
 
-const locale = window.navigator.language || 'en'
+const locale = globalsVar.window?.navigator?.language || 'en'
 dayjs.locale(locale)
 
 export const RECOGNIZABLE_DATE_FORMATS = [

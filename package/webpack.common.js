@@ -1,12 +1,18 @@
 const path = require('path')
 const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const themeVariables = require('./antd/antd-theme')
+const themeVariables = require('./src/antd/antd-theme')
+const CircularDependencyPlugin = require('circular-dependency-plugin')
+const nodeExternals = require('webpack-node-externals');
 
 const cssLoaders = [
-  MiniCssExtractPlugin.loader,
+  {
+    loader: MiniCssExtractPlugin.loader,
+    options: {
+      publicPath: ''
+    }
+  },
   {
     loader: require.resolve('css-loader'),
     options: {
@@ -28,24 +34,26 @@ const cssLoaders = [
 
 const paths = {
   app: '.',
-  favicon: './src/assets/images/favicon.png',
   src: './src',
-  dist: './dist',
-  entry: './src/application/entry.jsx'
+  dist: './lib',
+  entry: './src/index.js'
 }
 
 module.exports = {
   entry: path.resolve(__dirname, paths.entry),
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, paths.dist)
+    globalObject: 'this',
+    library: 'labeling_tool',
+    libraryTarget: "umd",
+    path: path.resolve(__dirname, paths.dist),
+    publicPath: ''
   },
   resolve: {
     modules: [
       path.resolve(__dirname, paths.src),
       'node_modules'
     ],
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
       '@': path.resolve(__dirname, paths.src),
       '~': path.resolve(__dirname, paths.app)
@@ -54,30 +62,30 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js(x?)$/,
+        test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        loader: 'source-map-loader'
-      },
-      {
-        test: /\.less$/,
-        use: [
-          ...cssLoaders,
-          {
-            loader: 'less-loader',
-            options: {
-              lessOptions: {
-                javascriptEnabled: true,
-                modifyVars: themeVariables
-              }
-            }
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
           }
-        ]
+        },
       },
+      // {
+      //   test: /\.less$/,
+      //   use: [
+      //     ...cssLoaders,
+      //     {
+      //       loader: 'less-loader',
+      //       options: {
+      //         lessOptions: {
+      //           javascriptEnabled: true,
+      //           modifyVars: themeVariables
+      //         }
+      //       }
+      //     }
+      //   ]
+      // },
       {
         test: /\.css$/,
         use: cssLoaders
@@ -115,12 +123,25 @@ module.exports = {
     ]
   },
   plugins: [
+    new CircularDependencyPlugin({
+      // exclude detection of files based on a RegExp
+      exclude: /a\.js|node_modules/,
+      // include specific files based on a RegExp
+      include: /scr/,
+      // add errors to webpack instead of warnings
+      failOnError: true,
+      // allow import cycles that include an asyncronous import,
+      // e.g. via import(/* webpackMode: "weak" */ './file.js')
+      allowAsyncCycles: false,
+      // set the current working directory for displaying module paths
+      cwd: process.cwd(),
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
     new AntdDayjsWebpackPlugin({
       replaceMoment: true,
-      plugins: require('./antd/dayjs-plugins')
+      plugins: require('./src/antd/dayjs-plugins')
     }),
     new CssMinimizerPlugin({
       minimizerOptions: {
@@ -133,27 +154,7 @@ module.exports = {
           }
         ]
       }
-    }),
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: path.resolve(__dirname, 'public/index.html'),
-      favicon: paths.favicon,
-      meta: {
-        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-      },
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true
-      }
     })
-  ]
+  ],
+  externals: [nodeExternals()]
 }

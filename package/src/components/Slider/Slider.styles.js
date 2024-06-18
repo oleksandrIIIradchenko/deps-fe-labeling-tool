@@ -1,5 +1,5 @@
 import { Col, Row } from 'antd'
-import 'antd/lib/grid/style/index.less'
+// import 'antd/es/grid/style/index.css'
 import styled from 'styled-components'
 import { Button } from '@/components/Button'
 import { Input } from '@/components/Input'

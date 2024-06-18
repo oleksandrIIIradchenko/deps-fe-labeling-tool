@@ -1,6 +1,6 @@
 
 import { Dropdown as AntdDropdown } from 'antd'
-import 'antd/lib/dropdown/style/index.less'
+// import 'antd/es/dropdown/style/index.css'
 import styled from 'styled-components'
 
 const StyledDropdown = styled(AntdDropdown)`

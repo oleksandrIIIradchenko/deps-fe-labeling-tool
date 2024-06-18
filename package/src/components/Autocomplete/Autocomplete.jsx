@@ -1,7 +1,7 @@
 
 import React, { useState, useMemo, useCallback, useEffect } from 'react'
 import { AutoComplete as AntdAutocomplete } from 'antd'
-import 'antd/lib/auto-complete/style/index.less'
+// import 'antd/es/auto-complete/style/index.css'
 import lodashDebounce from 'lodash/debounce'
 import PropTypes from 'prop-types'
 import { optionShape } from '@/models/Option'

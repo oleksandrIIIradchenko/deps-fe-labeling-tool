@@ -1,6 +1,6 @@
 import React from 'react'
 import { List as AntdList } from 'antd'
-import 'antd/lib/list/style/index.less'
+// import 'antd/es/list/style/index.css'
 import { ListItem as StyledListItem, ListItemMeta as StyledListItemMeta } from './List.styles'
 
 const List = (props) => (

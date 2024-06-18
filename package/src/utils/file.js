@@ -1,4 +1,5 @@
 import FileSaver from 'file-saver'
+import { globalsVar } from '@/utils/global-variable'
 
 const saveToFile = (filename, encoding, content) => {
   FileSaver.saveAs(
@@ -7,7 +8,7 @@ const saveToFile = (filename, encoding, content) => {
 }
 
 const readFile = (accept) => new Promise((resolve, reject) => {
-  const i = document.createElement('input')
+  const i = globalsVar.document.createElement('input')
   i.type = 'file'
   i.style = 'display: none'
   i.accept = accept || ''

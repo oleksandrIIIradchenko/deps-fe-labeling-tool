@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Button } from '@/components/Button'
 import { Collapse } from '@/components/Collapse'
 import { COLORS } from '@/theme/theme.default'
-import 'antd/lib/drawer/style/index.less'
+// import 'antd/es/drawer/style/index.css'
 
 const StyledDrawer = styled(Drawer)`
   z-index: 1060;

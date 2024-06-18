@@ -1,4 +1,4 @@
-import { Settings } from 'labeling-tool/lib/models/Settings'
+import { Settings } from 'labeling-tool'
 
 const settings = new Settings()
 

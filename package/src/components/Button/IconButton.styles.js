@@ -1,5 +1,5 @@
 import { Button as AntdButton } from 'antd'
-import 'antd/lib/button/style/index.less'
+// import 'antd/es/button/style/index.css'
 import styled from 'styled-components'
 import { COLORS } from '@/theme/theme.default'
 
